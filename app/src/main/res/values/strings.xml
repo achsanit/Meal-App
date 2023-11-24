@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Meal App</string>
+    <string name="tv_email">Email</string>
+    <string name="tv_password">password</string>
+    <string name="tv_login">Login</string>
+    <string name="text_error_empty_field">error text field</string>
+    <string name="text_something_went_wrong">Something went wrong</string>
+    <string name="text_okay">Okay</string>
+    <string name="title_user">Users</string>
+    <string name="title_home">Home</string>
 </resources>
