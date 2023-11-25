@@ -27,5 +27,26 @@
         <argument
             android:name="CategoryItem"
             app:argType="com.achsanit.mealapp.data.response.CategoriesItem" />
+        <action
+            android:id="@+id/action_mealsFragment_to_detailMealFragment"
+            app:destination="@id/detailMealFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailMealFragment"
+        android:name="com.achsanit.mealapp.ui.home.detail.DetailMealFragment"
+        android:label="fragment_detail_meal"
+        tools:layout="@layout/fragment_detail_meal" >
+        <argument
+            android:name="mealItem"
+            app:argType="com.achsanit.mealapp.data.response.MealsItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_bookmark"
+        android:name="com.achsanit.mealapp.ui.bookmark.BookmarkMealFragment"
+        android:label="fragment_bookmark_meal"
+        tools:layout="@layout/fragment_bookmark_meal" >
+        <action
+            android:id="@+id/action_bookmarkMealFragment_to_detailMealFragment"
+            app:destination="@id/detailMealFragment" />
     </fragment>
 </navigation>

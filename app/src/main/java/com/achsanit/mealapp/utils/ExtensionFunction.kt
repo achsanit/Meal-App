@@ -8,6 +8,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import kotlin.reflect.KProperty1
 
 fun View.makeVisible() {
     this.visibility = View.VISIBLE
@@ -34,4 +35,10 @@ fun <T> Fragment.collectLatestState(flow: Flow<T>, collect: suspend (T) -> Unit)
             flow.collectLatest(collect)
         }
     }
+}
+
+fun convertToMap(obj: Any): Map<String, Any?> {
+    return obj::class.members
+        .filter { it is KProperty1<*, *> }
+        .associate { it.name to (it as KProperty1<Any, *>).get(obj) }
 }

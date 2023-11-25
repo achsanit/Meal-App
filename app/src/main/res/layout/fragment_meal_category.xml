@@ -6,14 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.category.MealCategoryFragment">
 
+    <com.google.android.material.search.SearchBar
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title_input_keywords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="?android:attr/colorAccent"
+        app:strokeWidth="1dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_category"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:paddingVertical="16dp"
+        android:paddingHorizontal="8dp"
+        android:clipToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/search_bar"/>
 
     <ProgressBar
         android:id="@+id/pb_loading"

@@ -23,7 +23,10 @@ class MealsFragment : Fragment() {
     private val binding get() = _binding!!
     private val mealsViewModel: MealsViewModel by viewModel()
     private val adapter: MealsAdapter by lazy {
-        MealsAdapter()
+        MealsAdapter {
+            val action = MealsFragmentDirections.actionMealsFragmentToDetailMealFragment(it)
+            findNavController().navigate(action)
+        }
     }
     private val args: MealsFragmentArgs by navArgs()
 
@@ -54,7 +57,6 @@ class MealsFragment : Fragment() {
                             adapter.submitData(it)
                         }
                     }
-
                     else -> {
                         pbLoading.makeGone()
                         BottomSheetErrorFragment(result.message.toString()).show(

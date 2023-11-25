@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             when(destination.id) {
                 R.id.nav_home -> setVisibilityBottomNav(true)
                 R.id.nav_user -> setVisibilityBottomNav(true)
+                R.id.nav_bookmark -> setVisibilityBottomNav(true)
                 else -> setVisibilityBottomNav(false)
             }
         }

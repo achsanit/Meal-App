@@ -10,4 +10,13 @@
     <string name="title_home">Home</string>
     <string name="meals">Meals: %1$s</string>
     <string name="title_bookmark">Bookmark</string>
+    <string name="text_detail_meal">Meal Detail</string>
+    <string name="text_instruction">Instruction</string>
+    <string name="text_country_placeholder">Country: %1$s</string>
+    <string name="text_category_placeholder">Category: %1$s</string>
+    <string name="text_ingredients">Ingredients</string>
+    <string name="text_message_no_bookmarks">You don\'t have bookmarks yet. When reading the meal detail, tap the bookmark icon to save it. You can come back here to read it later</string>
+    <string name="title_input_keywords">Input keywords..</string>
+    <string name="text_food">Meal</string>
+    <string name="text_recipe">Recipe</string>
 </resources>

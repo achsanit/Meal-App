@@ -1,5 +1,6 @@
 package com.achsanit.mealapp.ui.home.listmeal
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -9,7 +10,9 @@ import coil.load
 import com.achsanit.mealapp.data.response.MealsItem
 import com.achsanit.mealapp.databinding.ItemMealBinding
 
-class MealsAdapter : RecyclerView.Adapter<MealsAdapter.ViewHolder>() {
+class MealsAdapter(
+    private val onClick: (MealsItem) -> Unit
+) : RecyclerView.Adapter<MealsAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemMealBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -17,6 +20,10 @@ class MealsAdapter : RecyclerView.Adapter<MealsAdapter.ViewHolder>() {
                 with(binding) {
                     tvMealName.text = data.strMeal
                     ivThumbnailMeal.load(data.strMealThumb)
+
+                    root.setOnClickListener {
+                        onClick.invoke(data)
+                    }
                 }
             }
     }
@@ -35,6 +42,8 @@ class MealsAdapter : RecyclerView.Adapter<MealsAdapter.ViewHolder>() {
 
     fun submitData(data: List<MealsItem?>) {
         differ.submitList(data)
+
+        Log.d("ADAPTER BOOKMARK", data.toString())
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

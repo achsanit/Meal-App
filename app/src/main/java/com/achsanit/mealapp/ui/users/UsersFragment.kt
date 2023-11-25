@@ -1,5 +1,6 @@
 package com.achsanit.mealapp.ui.users
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.achsanit.mealapp.databinding.FragmentUsersBinding
+import com.achsanit.mealapp.ui.AuthActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class UsersFragment : Fragment() {
@@ -36,6 +38,13 @@ class UsersFragment : Fragment() {
         with(binding) {
             rvListUsers.adapter = adapter
             rvListUsers.layoutManager = LinearLayoutManager(requireContext())
+
+            ibLogout.setOnClickListener {
+                usersViewModel.setLoginStatus(false)
+                val intent = Intent(requireActivity(), AuthActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            }
         }
     }
 

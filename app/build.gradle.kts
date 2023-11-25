@@ -54,6 +54,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -101,4 +102,5 @@ dependencies {
     val paging_version = "3.2.1" // paging3 for pagination
     implementation("androidx.paging:paging-runtime:$paging_version")
     testImplementation("androidx.paging:paging-common:$paging_version")
+    implementation(kotlin("reflect"))
 }

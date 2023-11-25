@@ -1,6 +1,8 @@
 package com.achsanit.mealapp.data.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class ListMealByCategoryResponse(
 
@@ -8,6 +10,7 @@ data class ListMealByCategoryResponse(
 	val meals: List<MealsItem?>? = null
 )
 
+@Parcelize
 data class MealsItem(
 
 	@field:SerializedName("strMealThumb")
@@ -18,4 +21,4 @@ data class MealsItem(
 
 	@field:SerializedName("strMeal")
 	val strMeal: String? = null
-)
+): Parcelable

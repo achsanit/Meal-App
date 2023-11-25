@@ -11,7 +11,7 @@ object KoinInitializer {
             androidContext(app)
             modules(
                 listOf(
-                    networkModule, apiModule, repoModule, viewModelModule, localModule
+                    networkModule, apiModule, repoModule, viewModelModule, localModule, dbModule
                 )
             )
         }
