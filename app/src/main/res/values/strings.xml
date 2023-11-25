@@ -8,4 +8,6 @@
     <string name="text_okay">Okay</string>
     <string name="title_user">Users</string>
     <string name="title_home">Home</string>
+    <string name="meals">Meals: %1$s</string>
+    <string name="title_bookmark">Bookmark</string>
 </resources>

@@ -9,13 +9,19 @@ import coil.load
 import com.achsanit.mealapp.data.response.CategoriesItem
 import com.achsanit.mealapp.databinding.ItemCategoryBinding
 
-class MealCategoryAdapter : RecyclerView.Adapter<MealCategoryAdapter.ViewHolder>() {
+class MealCategoryAdapter(
+    private val onClick: (CategoriesItem) -> Unit
+) : RecyclerView.Adapter<MealCategoryAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
             fun bind(data: CategoriesItem) {
                 with(binding) {
                     tvTitleCategory.text = data.strCategory
                     ivThumbnailCategory.load(data.strCategoryThumb)
+
+                    cvCategory.setOnClickListener {
+                        onClick.invoke(data)
+                    }
                 }
             }
     }

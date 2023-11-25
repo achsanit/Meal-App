@@ -6,6 +6,7 @@ import androidx.paging.PagingData
 import com.achsanit.mealapp.data.response.CategoriesItem
 import com.achsanit.mealapp.data.response.DataItem
 import com.achsanit.mealapp.data.response.LoginResponse
+import com.achsanit.mealapp.data.response.MealsItem
 import kotlinx.coroutines.flow.Flow
 
 
@@ -33,6 +34,13 @@ class RemoteDataSource(
 
     suspend fun getListCategory(): List<CategoriesItem?>? {
         return mealService.getCategories().categories
+    }
+
+    suspend fun getMealsByCategory(category: String): List<MealsItem?>? {
+        val query = HashMap<String, String>()
+        query["c"] = category
+
+        return mealService.getMealsByCategory(query).meals
     }
 
 }

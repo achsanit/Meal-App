@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/nav_user">
+    app:startDestination="@id/nav_home">
 
     <fragment
         android:id="@+id/nav_user"
@@ -14,5 +14,18 @@
         android:id="@+id/nav_home"
         android:name="com.achsanit.mealapp.ui.home.category.MealCategoryFragment"
         android:label="fragment_meal_category"
-        tools:layout="@layout/fragment_meal_category" />
+        tools:layout="@layout/fragment_meal_category" >
+        <action
+            android:id="@+id/action_nav_home_to_mealsFragment"
+            app:destination="@id/mealsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealsFragment"
+        android:name="com.achsanit.mealapp.ui.home.listmeal.MealsFragment"
+        android:label="fragment_meals"
+        tools:layout="@layout/fragment_meals" >
+        <argument
+            android:name="CategoryItem"
+            app:argType="com.achsanit.mealapp.data.response.CategoriesItem" />
+    </fragment>
 </navigation>

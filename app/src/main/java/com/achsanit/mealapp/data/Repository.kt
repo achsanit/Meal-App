@@ -6,6 +6,7 @@ import com.achsanit.mealapp.data.network.RemoteDataSource
 import com.achsanit.mealapp.data.response.CategoriesItem
 import com.achsanit.mealapp.data.response.DataItem
 import com.achsanit.mealapp.data.response.LoginResponse
+import com.achsanit.mealapp.data.response.MealsItem
 import com.achsanit.mealapp.utils.Resource
 import com.achsanit.mealapp.utils.resourceMapper
 import kotlinx.coroutines.flow.Flow
@@ -30,6 +31,12 @@ class Repository(
     suspend fun getCategories(): Resource<List<CategoriesItem?>?> {
         return resourceMapper {
             remoteDataSource.getListCategory()
+        }
+    }
+
+    suspend fun getMealsByCategory(category: String): Resource<List<MealsItem?>?> {
+        return resourceMapper {
+            remoteDataSource.getMealsByCategory(category)
         }
     }
 

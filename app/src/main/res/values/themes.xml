@@ -6,4 +6,16 @@
     </style>
 
     <style name="Theme.MealApp" parent="Base.Theme.MealApp" />
+
+    <style name="roundedImageView" parent="Theme.MealApp">
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="roundedImageView.smallRounded" parent="roundedImageView">
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="roundedImageView.mediumRounded" parent="roundedImageView">
+        <item name="cornerSize">16dp</item>
+    </style>
 </resources>
