@@ -10,4 +10,9 @@
         android:name="com.achsanit.mealapp.ui.users.UsersFragment"
         android:label="fragment_users"
         tools:layout="@layout/fragment_users" />
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.achsanit.mealapp.ui.home.category.MealCategoryFragment"
+        android:label="fragment_meal_category"
+        tools:layout="@layout/fragment_meal_category" />
 </navigation>

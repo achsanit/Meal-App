@@ -2,6 +2,7 @@ package com.achsanit.mealapp.di
 
 import com.achsanit.mealapp.BuildConfig
 import com.achsanit.mealapp.data.network.AuthService
+import com.achsanit.mealapp.data.network.MealService
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import okhttp3.OkHttpClient
@@ -43,5 +44,15 @@ val apiModule = module {
             .build()
 
         retrofit.create(AuthService::class.java)
+    }
+
+    single {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BuildConfig.BASE_MEAL_API)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(get())
+            .build()
+
+        retrofit.create(MealService::class.java)
     }
 }

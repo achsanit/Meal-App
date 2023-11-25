@@ -3,6 +3,7 @@ package com.achsanit.mealapp.data
 import androidx.paging.PagingData
 import com.achsanit.mealapp.data.local.LocalDataSource
 import com.achsanit.mealapp.data.network.RemoteDataSource
+import com.achsanit.mealapp.data.response.CategoriesItem
 import com.achsanit.mealapp.data.response.DataItem
 import com.achsanit.mealapp.data.response.LoginResponse
 import com.achsanit.mealapp.utils.Resource
@@ -25,5 +26,11 @@ class Repository(
     }
 
     fun getListUsers(): Flow<PagingData<DataItem>> = remoteDataSource.getListUser()
+
+    suspend fun getCategories(): Resource<List<CategoriesItem?>?> {
+        return resourceMapper {
+            remoteDataSource.getListCategory()
+        }
+    }
 
 }
